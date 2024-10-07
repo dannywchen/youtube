@@ -12,6 +12,8 @@ import PricingPage from './pages/Pricing';
 import './firebase.config';
 import SearchComponent from './components/SearchComponent';
 import VideoPage from './pages/video';
+import CommentWall from './pages/comment';
+
 const queryClient = new QueryClient();
 
 const App = () => {
@@ -43,6 +45,7 @@ const App = () => {
                 <Route path="/blog" element={<BlogPage />} />
                 <Route path="/pricing" element={<PricingPage />} />
                 <Route path="/video" element={<VideoPage />} />
+                <Route path="/comment" element={<CommentWall />} />
               </Routes>
             </div>
           </div>

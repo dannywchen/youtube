@@ -1,36 +1,20 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
+import { motion, useScroll } from "framer-motion";
 import { BackgroundBeams } from "@/components/ui/background-beams";
 import { GridPattern } from "@/components/ui/animated-grid-pattern";
 import { useTheme } from "@/components/theme-provider";
 import { HeroHighlight, Highlight } from "@/components/ui/hero-highlight";
 import { cn } from "@/lib/utils";
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
-import { Label } from "@/components/ui/label";
 import { TracingBeam } from "@/components/ui/tracing-beam";
 import { Separator } from "@/components/ui/separator";
 import Lenis from "@studio-freight/lenis";
 import { Footer } from "@/components/Footer";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { saveWaitlistSubmission } from '../firebase.config';
-import { useToast } from "@/hooks/use-toast";
-import { RainbowButton } from "@/components/ui/rainbow-button";
-import { ToastAction } from "@/components/ui/toast";
-import { Input } from "@/components/ui/input";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { AnimatedList } from "@/components/ui/animated-list";
-import { Check } from "lucide-react";
-import { BorderBeam } from "@/components/ui/border-beam";
-import { Marquee } from "@/components/ui/marquee";
+import { Link } from "react-router-dom";
 
 const LandingPage = () => {
   const { theme } = useTheme();
-  const [email, setEmail] = useState("");
-  const [isDialogOpen, setIsDialogOpen] = useState(false);
-  const [useCase, setUseCase] = useState("");
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const { toast } = useToast();
 
   const bgGradient = theme === 'dark'
     ? 'bg-gradient-to-br from-gray-900 to-gray-950'
@@ -38,46 +22,6 @@ const LandingPage = () => {
 
   const textColor = theme === 'dark' ? 'text-gray-100' : 'text-gray-900';
   const subtextColor = theme === 'dark' ? 'text-gray-300' : 'text-gray-700';
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    if (isSubmitting) return;
-
-    if (!email.includes('@')) {
-      toast({
-        title: "Invalid Email",
-        description: "Please enter a valid email address.",
-        variant: "destructive",
-      });
-      return;
-    }
-
-    setIsSubmitting(true);
-
-    try {
-      const result = await saveWaitlistSubmission(email, [useCase]);
-      setIsDialogOpen(false);
-      toast({
-        title: "Success!",
-        description: `You've successfully joined the waitlist! You are the ${result.position}th person on the waitlist.`,
-        action: (
-          <ToastAction altText="Close">Close</ToastAction>
-        ),
-      });
-    } catch (error) {
-      console.error("Error joining waitlist:", error);
-      toast({
-        title: "Success!",
-        description: "You've successfully joined the waitlist!",
-        action: (
-          <ToastAction altText="Close">Close</ToastAction>
-        ),
-      });
-    } finally {
-      setIsSubmitting(false);
-      setIsDialogOpen(false);
-    }
-  };
 
   useEffect(() => {
     const lenis = new Lenis()
@@ -91,7 +35,6 @@ const LandingPage = () => {
   }, [])
 
   const { scrollYProgress } = useScroll();
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
 
   return (
     <div className={`${bgGradient} ${textColor} overflow-hidden font-sans min-h-screen flex flex-col relative`} style={{ position: 'relative' }}>
@@ -123,8 +66,28 @@ const LandingPage = () => {
             transition={{ delay: 0.5, duration: 0.5 }}
           >
             <p className={`text-xl sm:text-2xl md:text-3xl mb-4 ${subtextColor} font-light leading-relaxed`}>
-              if you commented on a video, scroll down to see youself :)
+              if you commented on a video, see if you are on the comment wall :D
             </p>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.7, duration: 0.5 }}
+            className="mt-8"
+          >
+            <Link to="/comment">
+              <Button
+                className={cn(
+                  "text-xl sm:text-2xl font-semibold px-8 py-4",
+                  "bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600",
+                  "text-white shadow-lg hover:shadow-xl transition-all duration-300",
+                  "transform hover:scale-105 active:scale-95",
+                  "rounded-full"
+                )}
+              >
+                See Wall of Comments
+              </Button>
+            </Link>
           </motion.div>
         </section>
 
@@ -146,46 +109,6 @@ const LandingPage = () => {
             go comment on my shorts and ping me on the video. get featured :D
           </div>
         </motion.div>
-
-        <Separator className="mb-12 sm:mb-16 h-1 bg-gray-300 dark:bg-gray-700 w-3/4 mx-auto" />
-
-        <section className="text-center mb-12 sm:mb-16 max-w-5xl mx-auto">
-          <HeroHighlight>
-            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-8 sm:mb-12 tracking-tight">Comment Champs</h2>
-          </HeroHighlight>
-          <Marquee className="py-6 bg-gray-100 dark:bg-gray-800 rounded-lg">
-            <div className="flex space-x-6">
-              <div className="flex items-center space-x-2">
-                <img src="https://i.pravatar.cc/100?img=1" alt="User 1" className="w-12 h-12 rounded-full" />
-                <span>John Doe</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <img src="https://i.pravatar.cc/100?img=2" alt="User 2" className="w-12 h-12 rounded-full" />
-                <span>Jane Smith</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <img src="https://i.pravatar.cc/100?img=3" alt="User 3" className="w-12 h-12 rounded-full" />
-                <span>Bob Johnson</span>
-              </div>
-            </div>
-          </Marquee>
-          <Marquee className="py-6 bg-gray-200 dark:bg-gray-700 rounded-lg mt-4" reverse>
-            <div className="flex space-x-6">
-              <div className="flex items-center space-x-2">
-                <img src="https://i.pravatar.cc/100?img=4" alt="User 4" className="w-12 h-12 rounded-full" />
-                <span>Alice Brown</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <img src="https://i.pravatar.cc/100?img=5" alt="User 5" className="w-12 h-12 rounded-full" />
-                <span>Charlie Davis</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <img src="https://i.pravatar.cc/100?img=6" alt="User 6" className="w-12 h-12 rounded-full" />
-                <span>Eva Wilson</span>
-              </div>
-            </div>
-          </Marquee>
-        </section>
 
         <Separator className="mb-12 sm:mb-16 h-1 bg-gray-300 dark:bg-gray-700 w-3/4 mx-auto" />
 
