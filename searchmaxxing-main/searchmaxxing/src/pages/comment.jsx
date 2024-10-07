@@ -24,109 +24,11 @@ const CommentWall = () => {
 
   const comments = [
     {
-      id: 1,
-      author: "Poisoned_Petals",
-      content: "I'm in between comment and share rn lol",
-      avatar: "https://yt3.ggpht.com/O2iHa0Klnm9AOx-yAejcZ5-9g4rNMtCGwux0R_BSdKK700eeluzIcrd72oz_zds_3-v9kjJ4Plo=s88-c-k-c0x00ffffff-no-rj",
-      channel: "https://www.youtube.com/@elainegu5407"
-    },
-    {
-      id: 2,
-      author: "Cars are sigma",
-      content: "All sigmas who want to be rich like",
-      avatar: "https://yt3.ggpht.com/Z2afmeV_03OoI_IGl9aTgB282oEFcTbjSyaapydS3xqksLMxWB-jnaJNhlLD3n5lLaMa9Bcvbg=s88-c-k-c0x00ffffff-no-rj",
-      channel: "https://www.youtube.com/@Carsaresigma"
-    },
-    {
-      id: 3,
-      author: "Daniel Ames",
-      content: "Real",
-      avatar: "https://yt3.ggpht.com/Fh310khGg7_AXTH2wXkEk4QX-rITiDJZGwiaVcjJ4K4iuqCy9M6WRhRKPFB4osI-reCsks51=s88-c-k-c0x00ffffff-no-rj",
-      channel: "https://www.youtube.com/@danielames957"
-    },
-    {
-      id: 4,
-      author: "Caleb Glenn",
-      content: "hi",
-      avatar: "https://yt3.ggpht.com/ytc/AIdro_nr9xE_2vBhbh6K--Fq-aive21XyEQnu2y02BiS_JoIPeuEzrRmJAz6CHewA8Z5_h4Pew=s88-c-k-c0x00ffffff-no-rj",
-      channel: "https://www.youtube.com/@CalebGlenn-j1y"
-    },
-    {
-      id: 5,
-      author: "John",
-      content: "here to stop people saying first",
-      avatar: "https://yt3.ggpht.com/ytc/AIdro_ktf9w-_Y-Ykk2WaCOrvRvto-DqwRfZrCwkWm-etOgO-lhcHcpTYkUtyPAuK6d42C4TAw=s88-c-k-c0x00ffffff-no-rj",
-      channel: "https://www.youtube.com/@John-tw9hy"
-    },
-    {
-      id: 6,
-      author: "dreamyuni",
-      content: "FIRST!",
-      avatar: "https://yt3.ggpht.com/bLey6ezMdbb-pQYJSSkY4XY6ZuAZBVZ1vV0zhjmN_Z5VbSf5FHaa2hz1_h7qzPMESwtuYcU=s88-c-k-c0x00ffffff-no-rj",
-      channel: "http://www.youtube.com/@dreamyuni"
-    },
-    {
-      id: 7,
-      author: "reddit x stories",
-      content: "SECOND",
-      avatar: "https://yt3.ggpht.com/cX4LVUS77X1of9EAnvFYIi_dXUIupiPMoJykYHmv-qvm0KhJ2VNV0GIipyY8gdC7G1FaESFXnA=s88-c-k-c0x00ffffff-no-rj",
-      channel: "http://www.youtube.com/@redditxstories1"
-    },
-    {
-      id: 8,
-      author: "aryellecalkins5008",
-      content: "I'm a huge fan pls get pinned❤",
-      avatar: "https://yt3.ggpht.com/SzyqCpPOMbI_qXw4ZN-bnRN17x-kWqRwnvx77QxFnlGvjJJtbFG8-_2ci1XUId_ZrgdAiKn-pw=s88-c-k-c0x00ffffff-no-rj",
-      channel: "http://www.youtube.com/@aryellecalkins5008"
-    },
-    {
-      id: 9,
-      author: "JosephCarpenter-v7v",
-      content: "@Mullyan",
-      avatar: "https://yt3.ggpht.com/CYNev5NrdDyc5KRm6g8kGULI6HESYiwHYUBl_fFWAJzpyPtB5c6Kvhizeetq4Eqg0YJBsTpUJA=s88-c-k-c0x00ffffff-no-rj",
-      channel: "https://www.youtube.com/@JosephCarpenter-v7v"
-    },
-    {
-      id: 10,
-      author: "SatoruGojo574",
-      content: "All",
-      avatar: "https://yt3.ggpht.com/KiZ6qpCh74B7ZYw88nCTIdFX68FGQTrfz7neHupbxZ5q_zEucp9W0cqUS0nHZUWT0Z1EfEPE7w=s88-c-k-c0x00ffffff-no-rj",
-      channel: "https://www.youtube.com/@SatoruGojo574"
-    },
-    {
-      id: 11,
-      author: "careyflesner511",
-      content: "cute",
-      avatar: "https://yt3.ggpht.com/ytc/AIdro_nvddonRT_q-Z5Otj4Yai0WUPBeDqG9drdXMZ6P7VFIxWeP=s88-c-k-c0x00ffffff-no-rj",
-      channel: "http://www.youtube.com/@careyflesner511"
-    },
-    {
-      id: 12,
-      author: "PrachiSharma-y2h",
-      content: "Oh..",
-      avatar: "https://yt3.ggpht.com/ytc/AIdro_mL5AcD1g44LBAuDqwNx43wXm0Ag2DM15y-xgqr60QEEIlmQdJi-HpFUQjDW-Zp-bCHzw=s88-c-k-c0x00ffffff-no-rj",
-      channel: "http://www.youtube.com/@PrachiSharma-y2h"
-    },
-    {
-      id: 13,
-      author: "Edward-Danger-AU",
-      content: "I'm Richy Bou",
-      avatar: "https://yt3.ggpht.com/vTcmYglMP_AhVvGEuBqD-kv53-ZOaO0OVcZ5SW-XzTZJk2iGYZV9zm1pe_UG1wBnzORGlvGTjA=s88-c-k-c0x00ffffff-no-rj",
-      channel: "http://www.youtube.com/@Edward-Danger-AU"
-    },
-    {
-      id: 14,
-      author: "Alm-c9g",
-      content: "Hi☺️",
-      avatar: "https://yt3.ggpht.com/ytc/AIdro_lO1bg78qyz0HR_ZIH8s5qeSfzYr9fVSd1DukOaqgMnQ42rwYpPYWufcdbL9Z9Zby0O7g=s88-c-k-c0x00ffffff-no-rj",
-      channel: "https://www.youtube.com/@Alm-c9g"
-    },
-    {
-      id: 15,
-      author: "LilFabsTV",
-      content: "😂😂😂",
-      avatar: "https://yt3.ggpht.com/qRd4bNwnZGtslZjgAPIswow7kvHX06Q_A2wZoyVkEF7TnviyoMkTZZy7G9OhKHfumTKFS4yl5Jg=s88-c-k-c0x00ffffff-no-rj",
-      channel: "http://www.youtube.com/@LilFabsTV"
+      id: 17,
+      author: "RayannAllen-c7r",
+      content: "Pop",
+      avatar: "https://yt3.ggpht.com/jiB58a3Z4XcMlE6ee-3WGfoZbX4Hdr0B7HhdqF_zpOL58g_YzH5mUCXVbKf8J-msy-uhPrdubQ=s88-c-k-c0x00ffffff-no-rj",
+      channel: "http://www.youtube.com/@RayannAllen-c7r"
     },
     {
       id: 16,
@@ -136,11 +38,109 @@ const CommentWall = () => {
       channel: "http://www.youtube.com/@angelinaalz491"
     },
     {
-      id: 17,
-      author: "RayannAllen-c7r",
-      content: "Pop",
-      avatar: "https://yt3.ggpht.com/jiB58a3Z4XcMlE6ee-3WGfoZbX4Hdr0B7HhdqF_zpOL58g_YzH5mUCXVbKf8J-msy-uhPrdubQ=s88-c-k-c0x00ffffff-no-rj",
-      channel: "http://www.youtube.com/@RayannAllen-c7r"
+      id: 15,
+      author: "LilFabsTV",
+      content: "😂😂😂",
+      avatar: "https://yt3.ggpht.com/qRd4bNwnZGtslZjgAPIswow7kvHX06Q_A2wZoyVkEF7TnviyoMkTZZy7G9OhKHfumTKFS4yl5Jg=s88-c-k-c0x00ffffff-no-rj",
+      channel: "http://www.youtube.com/@LilFabsTV"
+    },
+    {
+      id: 14,
+      author: "Alm-c9g",
+      content: "Hi☺️",
+      avatar: "https://yt3.ggpht.com/ytc/AIdro_lO1bg78qyz0HR_ZIH8s5qeSfzYr9fVSd1DukOaqgMnQ42rwYpPYWufcdbL9Z9Zby0O7g=s88-c-k-c0x00ffffff-no-rj",
+      channel: "https://www.youtube.com/@Alm-c9g"
+    },
+    {
+      id: 13,
+      author: "Edward-Danger-AU",
+      content: "I'm Richy Bou",
+      avatar: "https://yt3.ggpht.com/vTcmYglMP_AhVvGEuBqD-kv53-ZOaO0OVcZ5SW-XzTZJk2iGYZV9zm1pe_UG1wBnzORGlvGTjA=s88-c-k-c0x00ffffff-no-rj",
+      channel: "http://www.youtube.com/@Edward-Danger-AU"
+    },
+    {
+      id: 12,
+      author: "PrachiSharma-y2h",
+      content: "Oh..",
+      avatar: "https://yt3.ggpht.com/ytc/AIdro_mL5AcD1g44LBAuDqwNx43wXm0Ag2DM15y-xgqr60QEEIlmQdJi-HpFUQjDW-Zp-bCHzw=s88-c-k-c0x00ffffff-no-rj",
+      channel: "http://www.youtube.com/@PrachiSharma-y2h"
+    },
+    {
+      id: 11,
+      author: "careyflesner511",
+      content: "cute",
+      avatar: "https://yt3.ggpht.com/ytc/AIdro_nvddonRT_q-Z5Otj4Yai0WUPBeDqG9drdXMZ6P7VFIxWeP=s88-c-k-c0x00ffffff-no-rj",
+      channel: "http://www.youtube.com/@careyflesner511"
+    },
+    {
+      id: 10,
+      author: "SatoruGojo574",
+      content: "All",
+      avatar: "https://yt3.ggpht.com/KiZ6qpCh74B7ZYw88nCTIdFX68FGQTrfz7neHupbxZ5q_zEucp9W0cqUS0nHZUWT0Z1EfEPE7w=s88-c-k-c0x00ffffff-no-rj",
+      channel: "https://www.youtube.com/@SatoruGojo574"
+    },
+    {
+      id: 9,
+      author: "JosephCarpenter-v7v",
+      content: "@Mullyan",
+      avatar: "https://yt3.ggpht.com/CYNev5NrdDyc5KRm6g8kGULI6HESYiwHYUBl_fFWAJzpyPtB5c6Kvhizeetq4Eqg0YJBsTpUJA=s88-c-k-c0x00ffffff-no-rj",
+      channel: "https://www.youtube.com/@JosephCarpenter-v7v"
+    },
+    {
+      id: 8,
+      author: "aryellecalkins5008",
+      content: "I'm a huge fan pls get pinned❤",
+      avatar: "https://yt3.ggpht.com/SzyqCpPOMbI_qXw4ZN-bnRN17x-kWqRwnvx77QxFnlGvjJJtbFG8-_2ci1XUId_ZrgdAiKn-pw=s88-c-k-c0x00ffffff-no-rj",
+      channel: "http://www.youtube.com/@aryellecalkins5008"
+    },
+    {
+      id: 7,
+      author: "reddit x stories",
+      content: "SECOND",
+      avatar: "https://yt3.ggpht.com/cX4LVUS77X1of9EAnvFYIi_dXUIupiPMoJykYHmv-qvm0KhJ2VNV0GIipyY8gdC7G1FaESFXnA=s88-c-k-c0x00ffffff-no-rj",
+      channel: "http://www.youtube.com/@redditxstories1"
+    },
+    {
+      id: 6,
+      author: "dreamyuni",
+      content: "FIRST!",
+      avatar: "https://yt3.ggpht.com/bLey6ezMdbb-pQYJSSkY4XY6ZuAZBVZ1vV0zhjmN_Z5VbSf5FHaa2hz1_h7qzPMESwtuYcU=s88-c-k-c0x00ffffff-no-rj",
+      channel: "http://www.youtube.com/@dreamyuni"
+    },
+    {
+      id: 5,
+      author: "John",
+      content: "here to stop people saying first",
+      avatar: "https://yt3.ggpht.com/ytc/AIdro_ktf9w-_Y-Ykk2WaCOrvRvto-DqwRfZrCwkWm-etOgO-lhcHcpTYkUtyPAuK6d42C4TAw=s88-c-k-c0x00ffffff-no-rj",
+      channel: "https://www.youtube.com/@John-tw9hy"
+    },
+    {
+      id: 4,
+      author: "Caleb Glenn",
+      content: "hi",
+      avatar: "https://yt3.ggpht.com/ytc/AIdro_nr9xE_2vBhbh6K--Fq-aive21XyEQnu2y02BiS_JoIPeuEzrRmJAz6CHewA8Z5_h4Pew=s88-c-k-c0x00ffffff-no-rj",
+      channel: "https://www.youtube.com/@CalebGlenn-j1y"
+    },
+    {
+      id: 3,
+      author: "Daniel Ames",
+      content: "Real",
+      avatar: "https://yt3.ggpht.com/Fh310khGg7_AXTH2wXkEk4QX-rITiDJZGwiaVcjJ4K4iuqCy9M6WRhRKPFB4osI-reCsks51=s88-c-k-c0x00ffffff-no-rj",
+      channel: "https://www.youtube.com/@danielames957"
+    },
+    {
+      id: 2,
+      author: "Cars are sigma",
+      content: "All sigmas who want to be rich like",
+      avatar: "https://yt3.ggpht.com/Z2afmeV_03OoI_IGl9aTgB282oEFcTbjSyaapydS3xqksLMxWB-jnaJNhlLD3n5lLaMa9Bcvbg=s88-c-k-c0x00ffffff-no-rj",
+      channel: "https://www.youtube.com/@Carsaresigma"
+    },
+    {
+      id: 1,
+      author: "Poisoned_Petals",
+      content: "I'm in between comment and share rn lol",
+      avatar: "https://yt3.ggpht.com/O2iHa0Klnm9AOx-yAejcZ5-9g4rNMtCGwux0R_BSdKK700eeluzIcrd72oz_zds_3-v9kjJ4Plo=s88-c-k-c0x00ffffff-no-rj",
+      channel: "https://www.youtube.com/@elainegu5407"
     },
   ];
 
