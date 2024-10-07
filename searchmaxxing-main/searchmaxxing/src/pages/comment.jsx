@@ -71,6 +71,13 @@ const CommentWall = () => {
       avatar: "https://yt3.ggpht.com/cX4LVUS77X1of9EAnvFYIi_dXUIupiPMoJykYHmv-qvm0KhJ2VNV0GIipyY8gdC7G1FaESFXnA=s88-c-k-c0x00ffffff-no-rj",
       channel: "http://www.youtube.com/@redditxstories1"
     },
+    {
+      id: 8,
+      author: "aryellecalkins5008",
+      content: "I'm a huge fan pls get pinned❤",
+      avatar: "https://yt3.ggpht.com/SzyqCpPOMbI_qXw4ZN-bnRN17x-kWqRwnvx77QxFnlGvjJJtbFG8-_2ci1XUId_ZrgdAiKn-pw=s88-c-k-c0x00ffffff-no-rj",
+      channel: "http://www.youtube.com/@aryellecalkins5008"
+    },
   ];
 
   return (
