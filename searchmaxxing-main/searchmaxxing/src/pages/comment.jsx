@@ -33,6 +33,13 @@ const CommentWall = () => {
 
   const comments = [
     {
+      id: 21,
+      author: "Carter-b9e",
+      content: "W",
+      avatar: "https://yt3.ggpht.com/ytc/AIdro_mS0Mc60NZyxaJydSkBsakuZ7vbNBZ-xu91vkuivg-cKqxwLCjAfub72z7AfatrbICoJg=s88-c-k-c0x00ffffff-no-rj",
+      channel: "https://www.youtube.com/@Carter-b9e"
+    },
+    {
         id: 20,
         author: "redditxstories1",
         content: "I'm first",
