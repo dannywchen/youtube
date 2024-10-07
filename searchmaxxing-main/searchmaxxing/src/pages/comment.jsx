@@ -4,8 +4,10 @@ import { BackgroundBeams } from "@/components/ui/background-beams";
 import { GridPattern } from "@/components/ui/animated-grid-pattern";
 import { HeroHighlight } from "@/components/ui/hero-highlight";
 import { Button } from "@/components/ui/button";
+import { useTheme } from "@/components/theme-provider";
 
 const CommentWall = () => {
+  const { theme } = useTheme();
   const videoLink = "https://www.youtube.com/shorts/ypG4fwlZP9s";
   const videoTitle = "pov: you in school in 2028";
   const videoThumbnail = "https://i.ytimg.com/vi/ypG4fwlZP9s/maxresdefault.jpg";
@@ -42,9 +44,9 @@ const CommentWall = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 to-gray-950 text-white relative overflow-hidden">
-      <BackgroundBeams className="opacity-20" />
-      <GridPattern width={40} height={40} className="absolute inset-0 opacity-50" />
+    <div className={`min-h-screen ${theme === 'dark' ? 'bg-gradient-to-br from-gray-900 to-gray-950 text-white' : 'bg-gradient-to-br from-gray-50 to-gray-100 text-gray-900'} relative overflow-hidden`}>
+      <BackgroundBeams className={`opacity-20 ${theme === 'dark' ? '' : 'invert'}`} />
+      <GridPattern width={40} height={40} className={`absolute inset-0 opacity-50 ${theme === 'dark' ? '' : 'invert'}`} />
       
       <div className="container mx-auto px-4 py-12 relative z-10">
         <HeroHighlight>
@@ -55,7 +57,7 @@ const CommentWall = () => {
 
         <div className="flex flex-col md:flex-row gap-8 mb-12">
           <motion.div 
-            className="md:w-1/3 bg-white/10 backdrop-blur-lg rounded-xl overflow-hidden"
+            className={`md:w-1/3 ${theme === 'dark' ? 'bg-white/10' : 'bg-gray-800/10'} backdrop-blur-lg rounded-xl overflow-hidden`}
             whileHover={{ scale: 1.02 }}
             transition={{ type: "spring", stiffness: 300 }}
           >
@@ -64,7 +66,7 @@ const CommentWall = () => {
               <h2 className="text-xl font-semibold mb-2">{videoTitle}</h2>
               <Button 
                 onClick={() => window.open(videoLink, '_blank')}
-                className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded flex items-center justify-center"
+                className={`w-full ${theme === 'dark' ? 'bg-blue-600 hover:bg-blue-700' : 'bg-blue-500 hover:bg-blue-600'} text-white font-bold py-2 px-4 rounded flex items-center justify-center`}
               >
                 Comment to be on the wall! <ArrowUpRight className="ml-2 h-4 w-4" />
               </Button>
@@ -75,7 +77,7 @@ const CommentWall = () => {
             {comments.map((comment) => (
               <motion.div
                 key={comment.id}
-                className="bg-white/5 backdrop-blur-sm rounded-lg p-4 shadow-lg"
+                className={`${theme === 'dark' ? 'bg-white/5' : 'bg-gray-800/5'} backdrop-blur-sm rounded-lg p-4 shadow-lg`}
                 whileHover={{ scale: 1.03 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
@@ -87,13 +89,13 @@ const CommentWall = () => {
                       href={comment.channel} 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="text-xs text-blue-400 hover:text-blue-300 transition-colors"
+                      className={`text-xs ${theme === 'dark' ? 'text-blue-400 hover:text-blue-300' : 'text-blue-600 hover:text-blue-500'} transition-colors`}
                     >
                       View Channel
                     </a>
                   </div>
                 </div>
-                <p className="text-gray-300">{comment.content}</p>
+                <p className={theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}>{comment.content}</p>
               </motion.div>
             ))}
           </div>
