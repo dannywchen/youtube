@@ -6,9 +6,13 @@ import { Button } from "@/components/ui/button";
 import { useTheme } from "@/components/theme-provider";
 import { Separator } from "@/components/ui/separator";
 import { Footer } from "@/components/Footer";
+import { Progress } from "@/components/ui/progress";
+import { Input } from "@/components/ui/input";
+import { useState } from 'react';
 
 const CommentWall = () => {
   const { theme } = useTheme();
+  const [searchTerm, setSearchTerm] = useState('');
   const videos = [
     {
       link: "https://youtube.com/shorts/wJ9302RKrj4?si=O6U-IA6DCu3uJKqS",
@@ -151,6 +155,10 @@ const CommentWall = () => {
     },
   ];
 
+  const filteredComments = comments.filter(comment =>
+    comment.author.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
     <div className={`min-h-screen ${theme === 'dark' ? 'bg-gradient-to-br from-gray-900 to-gray-950 text-white' : 'bg-gradient-to-br from-gray-50 to-gray-100 text-gray-900'} relative overflow-hidden flex flex-col`}>
       <BackgroundBeams className={`opacity-20 ${theme === 'dark' ? '' : 'invert'}`} />
@@ -162,6 +170,21 @@ const CommentWall = () => {
             Comment Wall
           </h1>
         </HeroHighlight>
+
+        <div className="mb-8">
+          <p className="text-center mb-2">Road to 100 comments: {comments.length}/100</p>
+          <Progress value={(comments.length / 100) * 100} className="w-full" />
+        </div>
+
+        <div className="mb-8">
+          <Input
+            type="text"
+            placeholder="Search ur name!"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            className={`w-full p-2 rounded-lg ${theme === 'dark' ? 'bg-gray-800 text-white' : 'bg-white text-gray-900'}`}
+          />
+        </div>
 
         <div className="flex flex-col md:flex-row gap-8 mb-12">
           <div className="md:w-1/3 space-y-8">
@@ -190,7 +213,7 @@ const CommentWall = () => {
 
           <div className="md:w-2/3">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              {comments.map((comment) => (
+              {filteredComments.map((comment) => (
                 <motion.div
                   key={comment.id}
                   className={`${theme === 'dark' ? 'bg-white/5' : 'bg-gray-800/5'} backdrop-blur-sm rounded-lg p-4 shadow-lg`}
