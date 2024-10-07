@@ -26,7 +26,7 @@ const CommentWall = () => {
     },
     {
       link: "https://youtube.com/shorts/Bub-q0OFVIw",
-      title: "New Video",
+      title: "Pov: you in the future",
       thumbnail: "https://i.ytimg.com/vi/Bub-q0OFVIw/maxresdefault.jpg"
     }
   ];

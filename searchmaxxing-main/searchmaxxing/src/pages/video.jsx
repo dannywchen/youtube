@@ -16,6 +16,10 @@ const VideoPage = () => {
       id: 'wJ9302RKrj4',
       thumbnail: 'https://i.ytimg.com/vi/wJ9302RKrj4/maxresdefault.jpg',
     },
+    {
+      id: 'Bub-q0OFVIw',
+      thumbnail: 'https://i.ytimg.com/vi/Bub-q0OFVIw/maxresdefault.jpg',
+    }
   ];
 
   const bgGradient = theme === 'dark'
