@@ -19,6 +19,10 @@ const VideoPage = () => {
     {
       id: 'GXzGzDyQ8CI',
       thumbnail: 'https://i.ytimg.com/vi/GXzGzDyQ8CI/maxresdefault.jpg',
+    },
+    {
+      id: 'u2LRNmweAJQ',
+      thumbnail: 'https://i.ytimg.com/vi/u2LRNmweAJQ/maxresdefault.jpg',
     }
   ];
 

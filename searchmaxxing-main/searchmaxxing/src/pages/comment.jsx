@@ -28,6 +28,11 @@ const CommentWall = () => {
       link: "https://www.youtube.com/shorts/GXzGzDyQ8CI",
       title: "Pov: you in the future",
       thumbnail: "https://i.ytimg.com/vi/GXzGzDyQ8CI/maxresdefault.jpg"
+    },
+    {
+      link: "https://www.youtube.com/shorts/u2LRNmweAJQ",
+      title: "New video",
+      thumbnail: "https://i.ytimg.com/vi/u2LRNmweAJQ/maxresdefault.jpg"
     }
   ];
 
