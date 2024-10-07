@@ -134,13 +134,6 @@ const CommentWall = () => {
       avatar: "https://yt3.ggpht.com/ytc/AIdro_nATaj_XyZ449yTpyY9GNkkpedOEjet8B9ru95ikqwS3Mf-MXvcS1UlV0t6a5VEu6AwMQ=s88-c-k-c0x00ffffff-no-rj",
       channel: "http://www.youtube.com/@angelinaalz491"
     },
-    {
-      id: 17,
-      author: "angelinaalz491",
-      content: "@angelinaalz491",
-      avatar: "https://yt3.ggpht.com/ytc/AIdro_nATaj_XyZ449yTpyY9GNkkpedOEjet8B9ru95ikqwS3Mf-MXvcS1UlV0t6a5VEu6AwMQ=s88-c-k-c0x00ffffff-no-rj",
-      channel: "http://www.youtube.com/@angelinaalz491"
-    },
   ];
 
   return (
