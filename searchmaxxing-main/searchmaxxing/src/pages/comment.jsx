@@ -135,6 +135,13 @@ const CommentWall = () => {
       avatar: "https://yt3.ggpht.com/ytc/AIdro_nATaj_XyZ449yTpyY9GNkkpedOEjet8B9ru95ikqwS3Mf-MXvcS1UlV0t6a5VEu6AwMQ=s88-c-k-c0x00ffffff-no-rj",
       channel: "http://www.youtube.com/@angelinaalz491"
     },
+    {
+      id: 17,
+      author: "RayannAllen-c7r",
+      content: "Pop",
+      avatar: "https://yt3.ggpht.com/jiB58a3Z4XcMlE6ee-3WGfoZbX4Hdr0B7HhdqF_zpOL58g_YzH5mUCXVbKf8J-msy-uhPrdubQ=s88-c-k-c0x00ffffff-no-rj",
+      channel: "http://www.youtube.com/@RayannAllen-c7r"
+    },
   ];
 
   return (
