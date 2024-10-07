@@ -85,6 +85,13 @@ const CommentWall = () => {
       avatar: "https://yt3.ggpht.com/CYNev5NrdDyc5KRm6g8kGULI6HESYiwHYUBl_fFWAJzpyPtB5c6Kvhizeetq4Eqg0YJBsTpUJA=s88-c-k-c0x00ffffff-no-rj",
       channel: "https://www.youtube.com/@JosephCarpenter-v7v"
     },
+    {
+      id: 10,
+      author: "SatoruGojo574",
+      content: "All",
+      avatar: "https://yt3.ggpht.com/KiZ6qpCh74B7ZYw88nCTIdFX68FGQTrfz7neHupbxZ5q_zEucp9W0cqUS0nHZUWT0Z1EfEPE7w=s88-c-k-c0x00ffffff-no-rj",
+      channel: "https://www.youtube.com/@SatoruGojo574"
+    },
   ];
 
   return (
