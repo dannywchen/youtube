@@ -80,8 +80,8 @@ const CommentWall = () => {
     },
     {
       id: 9,
-      author: "Mullyan",
-      content: "@JosephCarpenter-v7v",
+      author: "JosephCarpenter-v7v",
+      content: "@Mullyan",
       avatar: "https://yt3.ggpht.com/CYNev5NrdDyc5KRm6g8kGULI6HESYiwHYUBl_fFWAJzpyPtB5c6Kvhizeetq4Eqg0YJBsTpUJA=s88-c-k-c0x00ffffff-no-rj",
       channel: "https://www.youtube.com/@JosephCarpenter-v7v"
     },
