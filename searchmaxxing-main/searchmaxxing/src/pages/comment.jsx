@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import { ArrowUpRight, ChevronRight, ChevronLeft } from 'lucide-react';
 import { BackgroundBeams } from "@/components/ui/background-beams";
 import { GridPattern } from "@/components/ui/animated-grid-pattern";
 import { HeroHighlight } from "@/components/ui/hero-highlight";
@@ -60,6 +59,13 @@ const CommentWall = () => {
       avatar: "https://yt3.ggpht.com/ytc/AIdro_ktf9w-_Y-Ykk2WaCOrvRvto-DqwRfZrCwkWm-etOgO-lhcHcpTYkUtyPAuK6d42C4TAw=s88-c-k-c0x00ffffff-no-rj",
       channel: "https://www.youtube.com/@John-tw9hy"
     },
+    {
+      id: 6,
+      author: "dreamyuni",
+      content: "FIRST!",
+      avatar: "https://yt3.ggpht.com/bLey6ezMdbb-pQYJSSkY4XY6ZuAZBVZ1vV0zhjmN_Z5VbSf5FHaa2hz1_h7qzPMESwtuYcU=s88-c-k-c0x00ffffff-no-rj",
+      channel: "http://www.youtube.com/@dreamyuni"
+    },
   ];
 
   const commentsPerPage = 4;
@@ -106,7 +112,7 @@ const CommentWall = () => {
                     onClick={() => window.open(video.link, '_blank')}
                     className={`w-full ${theme === 'dark' ? 'bg-blue-600 hover:bg-blue-700' : 'bg-blue-500 hover:bg-blue-600'} text-white font-bold py-2 px-4 rounded flex items-center justify-center`}
                   >
-                    Comment to be on the wall! <ArrowUpRight className="ml-2 h-4 w-4" />
+                    Comment to be on the wall!
                   </Button>
                 </div>
               </motion.div>
@@ -147,13 +153,13 @@ const CommentWall = () => {
                 onClick={handlePrevPage}
                 className={`${theme === 'dark' ? 'bg-blue-600 hover:bg-blue-700' : 'bg-blue-500 hover:bg-blue-600'} text-white font-bold py-2 px-4 rounded-full`}
               >
-                <ChevronLeft className="h-6 w-6" />
+                Previous
               </Button>
               <Button
                 onClick={handleNextPage}
                 className={`${theme === 'dark' ? 'bg-blue-600 hover:bg-blue-700' : 'bg-blue-500 hover:bg-blue-600'} text-white font-bold py-2 px-4 rounded-full`}
               >
-                <ChevronRight className="h-6 w-6" />
+                Next
               </Button>
             </div>
           </div>
