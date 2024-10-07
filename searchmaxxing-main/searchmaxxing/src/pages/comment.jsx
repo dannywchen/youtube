@@ -78,6 +78,13 @@ const CommentWall = () => {
       avatar: "https://yt3.ggpht.com/SzyqCpPOMbI_qXw4ZN-bnRN17x-kWqRwnvx77QxFnlGvjJJtbFG8-_2ci1XUId_ZrgdAiKn-pw=s88-c-k-c0x00ffffff-no-rj",
       channel: "http://www.youtube.com/@aryellecalkins5008"
     },
+    {
+      id: 9,
+      author: "Mullyan",
+      content: "@JosephCarpenter-v7v",
+      avatar: "https://yt3.ggpht.com/CYNev5NrdDyc5KRm6g8kGULI6HESYiwHYUBl_fFWAJzpyPtB5c6Kvhizeetq4Eqg0YJBsTpUJA=s88-c-k-c0x00ffffff-no-rj",
+      channel: "https://www.youtube.com/@JosephCarpenter-v7v"
+    },
   ];
 
   return (
