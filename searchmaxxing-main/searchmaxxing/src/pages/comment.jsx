@@ -127,6 +127,20 @@ const CommentWall = () => {
       avatar: "https://yt3.ggpht.com/qRd4bNwnZGtslZjgAPIswow7kvHX06Q_A2wZoyVkEF7TnviyoMkTZZy7G9OhKHfumTKFS4yl5Jg=s88-c-k-c0x00ffffff-no-rj",
       channel: "http://www.youtube.com/@LilFabsTV"
     },
+    {
+      id: 16,
+      author: "angelinaalz491",
+      content: "7",
+      avatar: "https://yt3.ggpht.com/ytc/AIdro_nATaj_XyZ449yTpyY9GNkkpedOEjet8B9ru95ikqwS3Mf-MXvcS1UlV0t6a5VEu6AwMQ=s88-c-k-c0x00ffffff-no-rj",
+      channel: "http://www.youtube.com/@angelinaalz491"
+    },
+    {
+      id: 17,
+      author: "angelinaalz491",
+      content: "@angelinaalz491",
+      avatar: "https://yt3.ggpht.com/ytc/AIdro_nATaj_XyZ449yTpyY9GNkkpedOEjet8B9ru95ikqwS3Mf-MXvcS1UlV0t6a5VEu6AwMQ=s88-c-k-c0x00ffffff-no-rj",
+      channel: "http://www.youtube.com/@angelinaalz491"
+    },
   ];
 
   return (
