@@ -92,6 +92,27 @@ const CommentWall = () => {
       avatar: "https://yt3.ggpht.com/KiZ6qpCh74B7ZYw88nCTIdFX68FGQTrfz7neHupbxZ5q_zEucp9W0cqUS0nHZUWT0Z1EfEPE7w=s88-c-k-c0x00ffffff-no-rj",
       channel: "https://www.youtube.com/@SatoruGojo574"
     },
+    {
+      id: 11,
+      author: "careyflesner511",
+      content: "cute",
+      avatar: "https://yt3.ggpht.com/ytc/AIdro_nvddonRT_q-Z5Otj4Yai0WUPBeDqG9drdXMZ6P7VFIxWeP=s88-c-k-c0x00ffffff-no-rj",
+      channel: "http://www.youtube.com/@careyflesner511"
+    },
+    {
+      id: 12,
+      author: "PrachiSharma-y2h",
+      content: "Oh..",
+      avatar: "https://yt3.ggpht.com/ytc/AIdro_mL5AcD1g44LBAuDqwNx43wXm0Ag2DM15y-xgqr60QEEIlmQdJi-HpFUQjDW-Zp-bCHzw=s88-c-k-c0x00ffffff-no-rj",
+      channel: "http://www.youtube.com/@PrachiSharma-y2h"
+    },
+    {
+      id: 13,
+      author: "Edward-Danger-AU",
+      content: "I'm Richy Bou",
+      avatar: "https://yt3.ggpht.com/vTcmYglMP_AhVvGEuBqD-kv53-ZOaO0OVcZ5SW-XzTZJk2iGYZV9zm1pe_UG1wBnzORGlvGTjA=s88-c-k-c0x00ffffff-no-rj",
+      channel: "http://www.youtube.com/@Edward-Danger-AU"
+    },
   ];
 
   return (
