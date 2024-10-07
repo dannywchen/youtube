@@ -4,7 +4,6 @@ import { GridPattern } from "@/components/ui/animated-grid-pattern";
 import { HeroHighlight } from "@/components/ui/hero-highlight";
 import { Button } from "@/components/ui/button";
 import { useTheme } from "@/components/theme-provider";
-import { useState } from 'react';
 import { Separator } from "@/components/ui/separator";
 
 const CommentWall = () => {
@@ -21,7 +20,6 @@ const CommentWall = () => {
       thumbnail: "https://i.ytimg.com/vi/ypG4fwlZP9s/maxresdefault.jpg"
     }
   ];
-  const [currentPage, setCurrentPage] = useState(0);
 
   const comments = [
     {
@@ -68,22 +66,6 @@ const CommentWall = () => {
     },
   ];
 
-  const commentsPerPage = 4;
-  const totalPages = Math.ceil(comments.length / commentsPerPage);
-
-  const handleNextPage = () => {
-    setCurrentPage((prev) => (prev + 1) % totalPages);
-  };
-
-  const handlePrevPage = () => {
-    setCurrentPage((prev) => (prev - 1 + totalPages) % totalPages);
-  };
-
-  const displayedComments = comments.slice(
-    currentPage * commentsPerPage,
-    (currentPage + 1) * commentsPerPage
-  );
-
   return (
     <div className={`min-h-screen ${theme === 'dark' ? 'bg-gradient-to-br from-gray-900 to-gray-950 text-white' : 'bg-gradient-to-br from-gray-50 to-gray-100 text-gray-900'} relative overflow-hidden`}>
       <BackgroundBeams className={`opacity-20 ${theme === 'dark' ? '' : 'invert'}`} />
@@ -123,7 +105,7 @@ const CommentWall = () => {
 
           <div className="md:w-2/3">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              {displayedComments.map((comment) => (
+              {comments.map((comment) => (
                 <motion.div
                   key={comment.id}
                   className={`${theme === 'dark' ? 'bg-white/5' : 'bg-gray-800/5'} backdrop-blur-sm rounded-lg p-4 shadow-lg`}
@@ -147,20 +129,6 @@ const CommentWall = () => {
                   <p className={theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}>{comment.content}</p>
                 </motion.div>
               ))}
-            </div>
-            <div className="flex justify-center mt-6 space-x-4">
-              <Button
-                onClick={handlePrevPage}
-                className={`${theme === 'dark' ? 'bg-blue-600 hover:bg-blue-700' : 'bg-blue-500 hover:bg-blue-600'} text-white font-bold py-2 px-4 rounded-full`}
-              >
-                Previous
-              </Button>
-              <Button
-                onClick={handleNextPage}
-                className={`${theme === 'dark' ? 'bg-blue-600 hover:bg-blue-700' : 'bg-blue-500 hover:bg-blue-600'} text-white font-bold py-2 px-4 rounded-full`}
-              >
-                Next
-              </Button>
             </div>
           </div>
         </div>
