@@ -1,16 +1,18 @@
 import { motion } from 'framer-motion';
-import { ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight, ChevronRight, ChevronLeft } from 'lucide-react';
 import { BackgroundBeams } from "@/components/ui/background-beams";
 import { GridPattern } from "@/components/ui/animated-grid-pattern";
 import { HeroHighlight } from "@/components/ui/hero-highlight";
 import { Button } from "@/components/ui/button";
 import { useTheme } from "@/components/theme-provider";
+import { useState } from 'react';
 
 const CommentWall = () => {
   const { theme } = useTheme();
   const videoLink = "https://www.youtube.com/shorts/ypG4fwlZP9s";
   const videoTitle = "pov: you in school in 2028";
   const videoThumbnail = "https://i.ytimg.com/vi/ypG4fwlZP9s/maxresdefault.jpg";
+  const [currentPage, setCurrentPage] = useState(0);
 
   const comments = [
     {
@@ -41,7 +43,30 @@ const CommentWall = () => {
       avatar: "https://yt3.ggpht.com/ytc/AIdro_nr9xE_2vBhbh6K--Fq-aive21XyEQnu2y02BiS_JoIPeuEzrRmJAz6CHewA8Z5_h4Pew=s88-c-k-c0x00ffffff-no-rj",
       channel: "https://www.youtube.com/@CalebGlenn-j1y"
     },
+    {
+      id: 5,
+      author: "John",
+      content: "here to stop people saying first",
+      avatar: "https://yt3.ggpht.com/ytc/AIdro_ktf9w-_Y-Ykk2WaCOrvRvto-DqwRfZrCwkWm-etOgO-lhcHcpTYkUtyPAuK6d42C4TAw=s88-c-k-c0x00ffffff-no-rj",
+      channel: "https://www.youtube.com/@John-tw9hy"
+    },
   ];
+
+  const commentsPerPage = 4;
+  const totalPages = Math.ceil(comments.length / commentsPerPage);
+
+  const handleNextPage = () => {
+    setCurrentPage((prev) => (prev + 1) % totalPages);
+  };
+
+  const handlePrevPage = () => {
+    setCurrentPage((prev) => (prev - 1 + totalPages) % totalPages);
+  };
+
+  const displayedComments = comments.slice(
+    currentPage * commentsPerPage,
+    (currentPage + 1) * commentsPerPage
+  );
 
   return (
     <div className={`min-h-screen ${theme === 'dark' ? 'bg-gradient-to-br from-gray-900 to-gray-950 text-white' : 'bg-gradient-to-br from-gray-50 to-gray-100 text-gray-900'} relative overflow-hidden`}>
@@ -73,31 +98,47 @@ const CommentWall = () => {
             </div>
           </motion.div>
 
-          <div className="md:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-6">
-            {comments.map((comment) => (
-              <motion.div
-                key={comment.id}
-                className={`${theme === 'dark' ? 'bg-white/5' : 'bg-gray-800/5'} backdrop-blur-sm rounded-lg p-4 shadow-lg`}
-                whileHover={{ scale: 1.03 }}
-                transition={{ type: "spring", stiffness: 300 }}
-              >
-                <div className="flex items-center mb-3">
-                  <img src={comment.avatar} alt={comment.author} className="w-10 h-10 rounded-full mr-3" />
-                  <div>
-                    <h3 className="font-semibold">{comment.author}</h3>
-                    <a 
-                      href={comment.channel} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className={`text-xs ${theme === 'dark' ? 'text-blue-400 hover:text-blue-300' : 'text-blue-600 hover:text-blue-500'} transition-colors`}
-                    >
-                      View Channel
-                    </a>
+          <div className="md:w-2/3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              {displayedComments.map((comment) => (
+                <motion.div
+                  key={comment.id}
+                  className={`${theme === 'dark' ? 'bg-white/5' : 'bg-gray-800/5'} backdrop-blur-sm rounded-lg p-4 shadow-lg`}
+                  whileHover={{ scale: 1.03 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                >
+                  <div className="flex items-center mb-3">
+                    <img src={comment.avatar} alt={comment.author} className="w-10 h-10 rounded-full mr-3" />
+                    <div>
+                      <h3 className="font-semibold">{comment.author}</h3>
+                      <a 
+                        href={comment.channel} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className={`text-xs ${theme === 'dark' ? 'text-blue-400 hover:text-blue-300' : 'text-blue-600 hover:text-blue-500'} transition-colors`}
+                      >
+                        View Channel
+                      </a>
+                    </div>
                   </div>
-                </div>
-                <p className={theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}>{comment.content}</p>
-              </motion.div>
-            ))}
+                  <p className={theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}>{comment.content}</p>
+                </motion.div>
+              ))}
+            </div>
+            <div className="flex justify-center mt-6 space-x-4">
+              <Button
+                onClick={handlePrevPage}
+                className={`${theme === 'dark' ? 'bg-blue-600 hover:bg-blue-700' : 'bg-blue-500 hover:bg-blue-600'} text-white font-bold py-2 px-4 rounded-full`}
+              >
+                <ChevronLeft className="h-6 w-6" />
+              </Button>
+              <Button
+                onClick={handleNextPage}
+                className={`${theme === 'dark' ? 'bg-blue-600 hover:bg-blue-700' : 'bg-blue-500 hover:bg-blue-600'} text-white font-bold py-2 px-4 rounded-full`}
+              >
+                <ChevronRight className="h-6 w-6" />
+              </Button>
+            </div>
           </div>
         </div>
       </div>
