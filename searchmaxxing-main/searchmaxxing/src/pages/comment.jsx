@@ -38,6 +38,13 @@ const CommentWall = () => {
 
   const comments = [
     {
+        id: 23,
+        author: "redditxstories1",
+        content: "Team Rich!",
+        avatar: "https://yt3.ggpht.com/cX4LVUS77X1of9EAnvFYIi_dXUIupiPMoJykYHmv-qvm0KhJ2VNV0GIipyY8gdC7G1FaESFXnA=s88-c-k-c0x00ffffff-no-rj",
+        channel: "http://www.youtube.com/@redditxstories1"
+      },
+    {
       id: 22,
       author: "Maddox-g4m",
       content: "Hello",
