@@ -11,7 +11,7 @@ const CommentWall = () => {
   const videos = [
     {
       link: "https://youtube.com/shorts/wJ9302RKrj4?si=O6U-IA6DCu3uJKqS",
-      title: "New Video Title",
+      title: "What will you be in 2030?",
       thumbnail: "https://i.ytimg.com/vi/wJ9302RKrj4/maxresdefault.jpg"
     },
     {
