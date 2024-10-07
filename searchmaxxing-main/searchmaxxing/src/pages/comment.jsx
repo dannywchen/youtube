@@ -23,10 +23,22 @@ const CommentWall = () => {
       link: "https://www.youtube.com/shorts/ypG4fwlZP9s",
       title: "pov: you in school in 2028",
       thumbnail: "https://i.ytimg.com/vi/ypG4fwlZP9s/maxresdefault.jpg"
+    },
+    {
+      link: "https://youtube.com/shorts/Bub-q0OFVIw",
+      title: "New Video",
+      thumbnail: "https://i.ytimg.com/vi/Bub-q0OFVIw/maxresdefault.jpg"
     }
   ];
 
   const comments = [
+    {
+      id: 19,
+      author: "redditxstories1",
+      content: "FIRST!",
+      avatar: "https://yt3.ggpht.com/cX4LVUS77X1of9EAnvFYIi_dXUIupiPMoJykYHmv-qvm0KhJ2VNV0GIipyY8gdC7G1FaESFXnA=s88-c-k-c0x00ffffff-no-rj",
+      channel: "http://www.youtube.com/@redditxstories1"
+    },
     {
       id: 18,
       author: "bhagyalakshmibogi1599",
