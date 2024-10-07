@@ -33,6 +33,13 @@ const CommentWall = () => {
 
   const comments = [
     {
+      id: 22,
+      author: "Maddox-g4m",
+      content: "Hello",
+      avatar: "https://yt3.ggpht.com/ytc/AIdro_nZa2L5tvX7AvSd4Ge5CNES4grhI0iSwAR0FOEKVgy-ONyNf84-qq6U12ADeVbgPcot_Q=s88-c-k-c0x00ffffff-no-rj",
+      channel: "https://www.youtube.com/@Maddox-g4m"
+    },
+    {
       id: 21,
       author: "Carter-b9e",
       content: "W",
