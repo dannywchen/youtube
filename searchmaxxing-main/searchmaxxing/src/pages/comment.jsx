@@ -24,6 +24,13 @@ const CommentWall = () => {
 
   const comments = [
     {
+      id: 18,
+      author: "bhagyalakshmibogi1599",
+      content: "Hi",
+      avatar: "https://yt3.ggpht.com/ytc/AIdro_n0QgkAXxLma5HTOI5cjGSGx-dIf-qINiqAN1-9YUk=s88-c-k-c0x00ffffff-no-rj",
+      channel: "http://www.youtube.com/@bhagyalakshmibogi1599"
+    },
+    {
       id: 17,
       author: "RayannAllen-c7r",
       content: "Pop",
