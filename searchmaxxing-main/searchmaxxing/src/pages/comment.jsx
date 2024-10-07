@@ -6,12 +6,22 @@ import { HeroHighlight } from "@/components/ui/hero-highlight";
 import { Button } from "@/components/ui/button";
 import { useTheme } from "@/components/theme-provider";
 import { useState } from 'react';
+import { Separator } from "@/components/ui/separator";
 
 const CommentWall = () => {
   const { theme } = useTheme();
-  const videoLink = "https://www.youtube.com/shorts/ypG4fwlZP9s";
-  const videoTitle = "pov: you in school in 2028";
-  const videoThumbnail = "https://i.ytimg.com/vi/ypG4fwlZP9s/maxresdefault.jpg";
+  const videos = [
+    {
+      link: "https://youtube.com/shorts/wJ9302RKrj4?si=O6U-IA6DCu3uJKqS",
+      title: "New Video Title",
+      thumbnail: "https://i.ytimg.com/vi/wJ9302RKrj4/maxresdefault.jpg"
+    },
+    {
+      link: "https://www.youtube.com/shorts/ypG4fwlZP9s",
+      title: "pov: you in school in 2028",
+      thumbnail: "https://i.ytimg.com/vi/ypG4fwlZP9s/maxresdefault.jpg"
+    }
+  ];
   const [currentPage, setCurrentPage] = useState(0);
 
   const comments = [
@@ -81,22 +91,29 @@ const CommentWall = () => {
         </HeroHighlight>
 
         <div className="flex flex-col md:flex-row gap-8 mb-12">
-          <motion.div 
-            className={`md:w-1/3 ${theme === 'dark' ? 'bg-white/10' : 'bg-gray-800/10'} backdrop-blur-lg rounded-xl overflow-hidden`}
-            whileHover={{ scale: 1.02 }}
-            transition={{ type: "spring", stiffness: 300 }}
-          >
-            <img src={videoThumbnail} alt={videoTitle} className="w-full h-48 object-cover" />
-            <div className="p-4">
-              <h2 className="text-xl font-semibold mb-2">{videoTitle}</h2>
-              <Button 
-                onClick={() => window.open(videoLink, '_blank')}
-                className={`w-full ${theme === 'dark' ? 'bg-blue-600 hover:bg-blue-700' : 'bg-blue-500 hover:bg-blue-600'} text-white font-bold py-2 px-4 rounded flex items-center justify-center`}
+          <div className="md:w-1/3 space-y-8">
+            {videos.map((video, index) => (
+              <motion.div 
+                key={index}
+                className={`${theme === 'dark' ? 'bg-white/10' : 'bg-gray-800/10'} backdrop-blur-lg rounded-xl overflow-hidden`}
+                whileHover={{ scale: 1.02 }}
+                transition={{ type: "spring", stiffness: 300 }}
               >
-                Comment to be on the wall! <ArrowUpRight className="ml-2 h-4 w-4" />
-              </Button>
-            </div>
-          </motion.div>
+                <img src={video.thumbnail} alt={video.title} className="w-full h-48 object-cover" />
+                <div className="p-4">
+                  <h2 className="text-xl font-semibold mb-2">{video.title}</h2>
+                  <Button 
+                    onClick={() => window.open(video.link, '_blank')}
+                    className={`w-full ${theme === 'dark' ? 'bg-blue-600 hover:bg-blue-700' : 'bg-blue-500 hover:bg-blue-600'} text-white font-bold py-2 px-4 rounded flex items-center justify-center`}
+                  >
+                    Comment to be on the wall! <ArrowUpRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          <Separator orientation="vertical" className="h-auto mx-4" />
 
           <div className="md:w-2/3">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
