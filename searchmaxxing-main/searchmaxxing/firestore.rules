@@ -1,0 +1,20 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /waitlist/{document=**} {
+      allow read, write: if true;
+    }
+    match /communities/{document=**} {
+      allow read, write: if false;
+    }
+    match /posts/{document=**} {
+      allow read, write: if false;
+    }
+    match /saas_communities/{document=**} {
+      allow read, write: if false;
+    }
+    match /saas_posts/{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
