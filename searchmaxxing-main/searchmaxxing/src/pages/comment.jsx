@@ -15,14 +15,9 @@ const CommentWall = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const videos = [
     {
-      link: "https://youtube.com/shorts/wJ9302RKrj4?si=O6U-IA6DCu3uJKqS",
-      title: "What will you be in 2030?",
-      thumbnail: "https://i.ytimg.com/vi/wJ9302RKrj4/maxresdefault.jpg"
-    },
-    {
-      link: "https://www.youtube.com/shorts/ypG4fwlZP9s",
-      title: "pov: you in school in 2028",
-      thumbnail: "https://i.ytimg.com/vi/ypG4fwlZP9s/maxresdefault.jpg"
+      link: "https://www.youtube.com/shorts/u2LRNmweAJQ",
+      title: "When will you be rich?",
+      thumbnail: "https://i.ytimg.com/vi/u2LRNmweAJQ/maxresdefault.jpg"
     },
     {
       link: "https://www.youtube.com/shorts/GXzGzDyQ8CI",
@@ -30,9 +25,14 @@ const CommentWall = () => {
       thumbnail: "https://i.ytimg.com/vi/GXzGzDyQ8CI/maxresdefault.jpg"
     },
     {
-      link: "https://www.youtube.com/shorts/u2LRNmweAJQ",
-      title: "New video",
-      thumbnail: "https://i.ytimg.com/vi/u2LRNmweAJQ/maxresdefault.jpg"
+      link: "https://www.youtube.com/shorts/ypG4fwlZP9s",
+      title: "pov: you in school in 2028",
+      thumbnail: "https://i.ytimg.com/vi/ypG4fwlZP9s/maxresdefault.jpg"
+    },
+    {
+      link: "https://youtube.com/shorts/wJ9302RKrj4?si=O6U-IA6DCu3uJKqS",
+      title: "What will you be in 2030?",
+      thumbnail: "https://i.ytimg.com/vi/wJ9302RKrj4/maxresdefault.jpg"
     }
   ];
 
