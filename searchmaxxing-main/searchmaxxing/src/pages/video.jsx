@@ -3,6 +3,7 @@ import { BackgroundBeams } from "@/components/ui/background-beams";
 import { GridPattern } from "@/components/ui/animated-grid-pattern";
 import { HeroHighlight } from "@/components/ui/hero-highlight";
 import { useTheme } from "@/components/theme-provider";
+import { Footer } from "@/components/Footer";
 
 const VideoPage = () => {
   const { theme } = useTheme();
@@ -25,14 +26,14 @@ const VideoPage = () => {
   const subtextColor = theme === 'dark' ? 'text-gray-300' : 'text-gray-700';
 
   return (
-    <div className={`min-h-screen ${bgGradient} ${textColor} relative overflow-hidden flex flex-col justify-center items-center`}>
+    <div className={`min-h-screen ${bgGradient} ${textColor} relative overflow-hidden flex flex-col`}>
       <BackgroundBeams className={`opacity-20 ${theme === 'dark' ? '' : 'invert'}`} />
       <GridPattern
         width={40}
         height={40}
         className={`absolute inset-0 opacity-50 ${theme === 'dark' ? '' : 'invert'}`}
       />
-      <div className="container mx-auto px-4 py-8 sm:py-16 relative z-10 text-center">
+      <div className="flex-grow container mx-auto px-4 py-8 sm:py-16 relative z-10 text-center flex flex-col justify-center items-center">
         <HeroHighlight>
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-4 sm:mb-8">
             Wall of Shorts
@@ -64,6 +65,7 @@ const VideoPage = () => {
           ))}
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

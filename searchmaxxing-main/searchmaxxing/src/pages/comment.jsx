@@ -5,6 +5,7 @@ import { HeroHighlight } from "@/components/ui/hero-highlight";
 import { Button } from "@/components/ui/button";
 import { useTheme } from "@/components/theme-provider";
 import { Separator } from "@/components/ui/separator";
+import { Footer } from "@/components/Footer";
 
 const CommentWall = () => {
   const { theme } = useTheme();
@@ -137,11 +138,11 @@ const CommentWall = () => {
   ];
 
   return (
-    <div className={`min-h-screen ${theme === 'dark' ? 'bg-gradient-to-br from-gray-900 to-gray-950 text-white' : 'bg-gradient-to-br from-gray-50 to-gray-100 text-gray-900'} relative overflow-hidden`}>
+    <div className={`min-h-screen ${theme === 'dark' ? 'bg-gradient-to-br from-gray-900 to-gray-950 text-white' : 'bg-gradient-to-br from-gray-50 to-gray-100 text-gray-900'} relative overflow-hidden flex flex-col`}>
       <BackgroundBeams className={`opacity-20 ${theme === 'dark' ? '' : 'invert'}`} />
       <GridPattern width={40} height={40} className={`absolute inset-0 opacity-50 ${theme === 'dark' ? '' : 'invert'}`} />
       
-      <div className="container mx-auto px-4 py-12 relative z-10">
+      <div className="container mx-auto px-4 py-12 relative z-10 flex-grow">
         <HeroHighlight>
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-8 text-center">
             Comment Wall
@@ -203,6 +204,7 @@ const CommentWall = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
