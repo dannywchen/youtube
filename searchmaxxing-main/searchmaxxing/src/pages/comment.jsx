@@ -64,6 +64,13 @@ const CommentWall = () => {
       avatar: "https://yt3.ggpht.com/bLey6ezMdbb-pQYJSSkY4XY6ZuAZBVZ1vV0zhjmN_Z5VbSf5FHaa2hz1_h7qzPMESwtuYcU=s88-c-k-c0x00ffffff-no-rj",
       channel: "http://www.youtube.com/@dreamyuni"
     },
+    {
+      id: 7,
+      author: "reddit x stories",
+      content: "SECOND",
+      avatar: "https://yt3.ggpht.com/cX4LVUS77X1of9EAnvFYIi_dXUIupiPMoJykYHmv-qvm0KhJ2VNV0GIipyY8gdC7G1FaESFXnA=s88-c-k-c0x00ffffff-no-rj",
+      channel: "http://www.youtube.com/@redditxstories1"
+    },
   ];
 
   return (
